@@ -14,9 +14,9 @@ use Response;
  */
 class JSend
 {
-	private $success = '';
-	private $fail = '';
-	private $error = '';
+	private $success;
+	private $fail;
+	private $error;
 
 	/**
 	 * Fetch status string
@@ -25,11 +25,9 @@ class JSend
 	 */
 	public function __construct()
 	{
-		$statusTypes = Config::get('JSend::status');
-
-		$this->success = $statusTypes['success'];
-		$this->fail 	= $statusTypes['fail'];
-		$this->error 	= $statusTypes['error'];
+		$this->success 	= 'success';
+		$this->fail 	= 'fail';
+		$this->error 	= 'error';
 	}
 
 	/**

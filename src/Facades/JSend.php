@@ -12,6 +12,6 @@ class JSend extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'JSend';
+        return 'Papasmurf\\JSend\\JSend';
     }
 }
