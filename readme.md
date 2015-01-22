@@ -34,7 +34,7 @@ having to think of the ideal JSON format..ever!
 function doStuff()
 {
 	return JSend::success([
-		'redirect' => URL::action('VaultController@index')
+		'redirect' => URL::action('UsersController@index')
 	]);
 }
 
