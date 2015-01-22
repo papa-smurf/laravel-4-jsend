@@ -58,9 +58,3 @@ function tryStuff()
 }
 
 ```
-
-## Configuration
-
-The configuration file allows you to change the status type naming of the success,
-fail and error responses. Keep in mind though that these are specified in the JSend
-specification which means it wouldn't make a lot of sense if yo actually changed those.
