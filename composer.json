@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Laravel 4 standard JSON response format",
     "keywords": ["laravel", "php", "jsend"],
-    "homepage": "https://github.com/papa-smurf/laravel-4-JSend",
+    "homepage": "https://github.com/papa-smurf/laravel-4-jsend",
     "license": "MIT",
     "authors": [
         {
