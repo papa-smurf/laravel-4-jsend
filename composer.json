@@ -1,0 +1,25 @@
+{
+    "name": "papasmurf/laravel-4-jsend",
+    "type": "library",
+    "description": "Laravel 4 standard JSON response format",
+    "keywords": ["laravel", "php", "jsend"],
+    "homepage": "https://github.com/papa-smurf/laravel-4-JSend",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kevin",
+            "email": "kevin@papasmurf.nl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "laravel/framework": "~4.1"
+    },    
+    "autoload": {    
+        "psr-4": {
+            "Papasmurf\\JSend": "src/"
+        }
+    },
+    "minimum-stability": "dev"    
+}
