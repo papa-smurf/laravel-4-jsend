@@ -34,8 +34,8 @@ having to think of the ideal JSON format..ever!
 function doStuff()
 {
 	return JSend::success([
-			'redirect' => URL::action('VaultController@index')
-		]);
+		'redirect' => URL::action('VaultController@index')
+	]);
 }
 
 function validateStuff()
@@ -46,10 +46,15 @@ function validateStuff()
 	]);
 }
 
-try {
-	stuff();
-} catch (Exception $e) {
-	JSend::error('whoops!');	
+function tryStuff()
+{
+	try {
+		stuff();
+	} catch (Exception $e) {
+		return JSend::error('whoops!');
+	}
+
+	return JSend::success();
 }
 
 ```
