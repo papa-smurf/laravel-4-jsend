@@ -18,7 +18,7 @@
     },    
     "autoload": {    
         "psr-4": {
-            "Papasmurf\\JSend": "src/"
+            "Papasmurf\\JSend\\": "src/"
         }
     },
     "minimum-stability": "dev"    
