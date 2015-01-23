@@ -1,10 +1,9 @@
 <?php namespace Papasmurf\JSend;
 
-use Config;
 use Response;
 
 /**
- * JSend, simple standard JSON response
+ * 	JSend: The simple standardized JSON response format!
  *
  *  JSend is a specification that lays down some rules for how
  *  JSON responses from web servers should be formatted.
@@ -19,7 +18,7 @@ class JSend
 	private $error;
 
 	/**
-	 * Fetch status string
+	 * Set status representations
 	 *
 	 * @return void
 	 */
@@ -63,10 +62,10 @@ class JSend
 	/**
 	 * Send a JSend standardized API response
 	 *
-	 * @param 	string $status 		Response status (success, fail = user error, error = server side error)
-	 * @param 	array|object $data  Additional response data
+	 * @param 	string 			$status 	Response status (success, fail = user error, error = server side error)
+	 * @param 	array|object 	$data  		Additional response data
 	 *
-	 * @return 	void
+	 * @return 	Response 		JSend response
 	 */
 	private static function respond($status, $data = [], $message = null, $code = null)
 	{
