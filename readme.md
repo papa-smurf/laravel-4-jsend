@@ -6,7 +6,7 @@ JSend is a specification that lays down some rules for how JSON responses from w
 
 ## Installation
 
-## Laravel 4.1+
+## Laravel 4.2+
 
 Install this package through Composer by editing your `composer.json` file to require `papasmurf/laravel-4-jsend`.
 
