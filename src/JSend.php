@@ -13,6 +13,7 @@ use Response;
  */
 class JSend
 {
+	private $responder;
 	private $success;
 	private $fail;
 	private $error;
@@ -20,10 +21,13 @@ class JSend
 	/**
 	 * Set status representations
 	 *
-	 * @return void
+	 * @param 	Response 	$responder 	Response class with a json method
+	 *
+	 * @return JSend
 	 */
-	public function __construct()
+	public function __construct(Response $responder)
 	{
+		$this->responder = $responder;
 		$this->success 	= 'success';
 		$this->fail 	= 'fail';
 		$this->error 	= 'error';
@@ -32,7 +36,9 @@ class JSend
 	/**
 	 * Success!
 	 *
-	 * @return Jsend
+	 * @param 	mixed $data
+	 * 
+	 * @return 	string
 	 */
 	public function success($data = [])
 	{
@@ -42,7 +48,9 @@ class JSend
 	/**
 	 * Something went wrong because of a user dependent error!
 	 *
-	 * @return Jsend
+	 * @param mixed $data
+	 *
+	 * @return string
 	 */
 	public function fail($data = [])
 	{
@@ -52,7 +60,11 @@ class JSend
 	/**
 	 * Something went wrong because of a server generated error
 	 *
-	 * @return Jsend
+	 * @param 	string 	$message
+	 * @param 	mixed 	$data
+	 * @param 	string 	$code Error code
+	 *
+	 * @return string
 	 */
 	public function error($message, $data = [], $code = null)
 	{
@@ -64,18 +76,20 @@ class JSend
 	 *
 	 * @param 	string 			$status 	Response status (success, fail = user error, error = server side error)
 	 * @param 	array|object 	$data  		Additional response data
+	 * @param 	string 			$message 	Response message
+	 * @param 	string 			$code 		Error code
 	 *
-	 * @return 	Response 		JSend response
+	 * @return 	string 	JSend response
 	 */
-	private static function respond($status, $data = [], $message = null, $code = null)
+	private function respond($status, $data = [], $message = '', $code = '')
 	{
 		$data = (object) $data;
 
-		return Response::json([
+		return $this->responder->json([
 			'status'	=> $status,
-			'data'		=> $data ?: '',
-			'message'	=> $message ?: '',
-			'code'		=> $code ?: ''
+			'data'		=> $data,
+			'message'	=> $message,
+			'code'		=> $code
 		]);
 	}
 }
